@@ -76,7 +76,7 @@ python ${SCRIPTS}/scripts/uncertainty/repeat_lines.py -i $TMP/preprocessed.tok.b
 -o $TMP/repeated.$SRC_LANG
 python ${SCRIPTS}/scripts/uncertainty/repeat_lines.py -i $TMP/mt.out -n $DROPOUT_N -o $TMP/repeated.$TGT_LANG
 
-fairseq-preprocess --srcdict ${MODEL_DIR}/dict.${SRC_LANG}.txt $TGT_DIC --source-lang ${SRC_LANG}
+fairseq-preprocess --srcdict ${MODEL_DIR}/dict.${SRC_LANG}.txt --tgtdict ${MODEL_DIR}/dict.${TGT_LANG}.txt --source-lang ${SRC_LANG}
 --target-lang ${TGT_LANG} --testpref ${TMP}/repeated --destdir ${TMP}/bin-repeated
 ```
 
